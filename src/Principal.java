@@ -1,3 +1,4 @@
+import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 
@@ -28,6 +29,19 @@ public class Principal {
         twd.setEpisidiosPorTemporada(16);
         twd.setMinutosPorEpisodio(50);
         System.out.println("Duração para maratonar a série: " + twd.getDuracaoEmMinutos());
+
+        Filme outroFilme = new Filme();
+        outroFilme.setNome("V - Ultimato");
+        outroFilme.setAnoDeLancamento(2020);
+        outroFilme.setDuracaoEmMinutos(120);
+        outroFilme.setIncluidoNoPlano(true);
+        System.out.println("Duração do filme: " + outroFilme.getDuracaoEmMinutos());
+
+        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+        calculadora.inclui(meuFilme);
+        calculadora.inclui(outroFilme);
+        calculadora.inclui(twd);
+        System.out.println("A duração total é de: " +calculadora.getTempoTotal());
 
     }
 }
